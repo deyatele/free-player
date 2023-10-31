@@ -1,15 +1,15 @@
 import React from 'react';
 
-import {SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
-import {Header} from './components/Header';
+import { Platform, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Header } from './components/Header';
 
 function App(): JSX.Element {
   return (
-    <SafeAreaView style={styles.app}>
+    <SafeAreaView style={[styles.app]}>
       <Header />
       <ScrollView>
         <View>
-          <Text>...</Text>
+          <Text style={{ color: 'white' }}>...</Text>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -18,7 +18,10 @@ function App(): JSX.Element {
 
 const styles = StyleSheet.create({
   app: {
-    padding: 10,
+    flex:1,
+    // borderWidth:2,
+    // borderColor:'red'
+
   },
 });
 
