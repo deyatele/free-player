@@ -1,15 +1,30 @@
-import { Image, StyleSheet, Text, TouchableNativeFeedback, TouchableOpacity, View } from 'react-native';
+import {
+  Image,
+  StyleSheet,
+  Text,
+  TouchableNativeFeedback,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import React from 'react';
 
 export const Header = () => {
   return (
-    <View style={[styles.container]}>
-      <Image source={require('../assets/settings-white.png')} style={styles.searchImage} />
+    <View style={styles.container}>
       <TouchableOpacity>
-        <View style={styles.search}>
-          <Image source={require('../assets/search.png')} style={styles.searchIcon} />
-          <Text style={styles.searchText}>Поиск треков, плейлистов и артистов</Text>
-        </View>
+        <Image
+          source={require('../assets/settings-white.png')}
+          style={styles.settingImage}
+        />
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.search}>
+        <Image
+          source={require('../assets/search.png')}
+          style={styles.searchIcon}
+        />
+        <Text style={styles.searchText}>
+          Поиск треков, плейлистов и артистов
+        </Text>
       </TouchableOpacity>
     </View>
   );
@@ -17,31 +32,28 @@ export const Header = () => {
 
 const styles = StyleSheet.create({
   container: {
-    display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent:'space-evenly',
     marginBottom: 20,
-    marginVertical:20
   },
   search: {
+    flexGrow: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    width: '100%',
     backgroundColor: '#555555',
-    paddingHorizontal: 15,
-    paddingVertical: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 8,
     borderRadius: 20,
-    overflow:'hidden'
+    overflow: 'hidden',
   },
-  searchImage: {
-    width: 25,
-    height: 25,
+  settingImage: {
+    width: 20,
+    height: 20,
     marginRight: 10,
   },
   searchIcon: {
-    width: 20,
-    height: 20,
+    width: 15,
+    height: 15,
     marginRight: 10,
   },
   searchText: {
