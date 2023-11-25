@@ -1,11 +1,13 @@
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, ScrollView} from 'react-native';
 import React from 'react';
 
 
 export const Traks = () => {
-  return (
-    <View>
-    </View>
+  return (   
+      <ScrollView>
+        
+      </ScrollView>
+    
   );
 };
 

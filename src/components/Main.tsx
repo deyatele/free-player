@@ -27,7 +27,7 @@ export const Main = () => {
   };
 
   return (
-    <>
+    <View>
       <ScrollView
         horizontal={true}
         style={{}}
@@ -58,7 +58,7 @@ export const Main = () => {
           );
         })}
       </ScrollView>
-    </>
+    </View>
   );
 };
 
