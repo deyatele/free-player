@@ -1,4 +1,4 @@
-import {Traks} from './Traks';
+import {Traks} from './Tracks';
 import {Performers} from './Performers';
 import {Albums} from './Albums';
 import {Folders} from './Folders';

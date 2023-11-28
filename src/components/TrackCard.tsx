@@ -1,16 +1,19 @@
 import {View, Text} from 'react-native';
 import React from 'react';
-import RNFS from 'react-native-fs';
+import { StatResult } from '../interface';
 
 interface TrackCardProps {
-  card: RNFS.StatResult;
+  item: StatResult;
 }
 
-export const TrackCard = ({card}:TrackCardProps) =>{
+export const TrackCard = ({item}: TrackCardProps) => {
   return (
-    <View>
-      <Text>{card.name}</Text>
-      <Text>{card.path}</Text>
+    <View
+      key={item.path}
+      style={{borderColor: '#eeeeee', borderWidth: 1, marginBottom: 5}}>
+      <Text>Имя: {item.name ? item.name : item.path.split('/').at(-1)}</Text>
+      <Text>Размер: {item.size}</Text>
+      <Text>Путь: {item.path}</Text>
     </View>
   );
-}
+};

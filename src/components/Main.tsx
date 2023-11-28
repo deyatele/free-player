@@ -4,17 +4,21 @@ import {
   ScrollView,
   StyleSheet,
   Text,
-  TextComponent,
-  TextProps,
   TouchableOpacity,
   View,
   useWindowDimensions,
 } from 'react-native';
 import {Tabs} from './Tabs';
-import {useState} from 'react';
-import { Settings } from './Settings';
+import {useState, useEffect} from 'react';
+import {Settings} from './Settings';
+import {useAppDispatch} from '../hooks/hooksState';
+import {fethTracks} from '../state/tracksMP3/tracksMP3Slice';
 
 export const Main = () => {
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(fethTracks());
+  }, []);
   const {width} = useWindowDimensions();
   const [page, setPage] = useState(0);
   const changeCursor = ({
@@ -51,7 +55,8 @@ export const Main = () => {
         {Tabs.map((tabEl, indx) => {
           const Tab = tabEl.tab;
           return (
-            <View key={indx} style={{width: width - 20}}>
+            <View key={indx} style={{width: width - 20, height:'90%'}}>
+              {/* Решить  с высотой */}
               <Settings />
               <Tab />
             </View>
